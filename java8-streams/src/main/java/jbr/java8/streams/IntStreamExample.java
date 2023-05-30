@@ -1,4 +1,4 @@
-package jbr.java8.streamstype;
+package jbr.java8.streams;
 
 import java.util.stream.IntStream;
 
