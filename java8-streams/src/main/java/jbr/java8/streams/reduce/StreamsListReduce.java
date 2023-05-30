@@ -12,17 +12,16 @@ import lombok.ToString;
 /**
  * Aim is to sum all persons salary
  * 
- * @author UC139891
- *
  */
 public class StreamsListReduce {
 
-	public static void main(String[] args) {
-		List<Employee> employees = Arrays.asList(new Employee("Ranjith", 40), new Employee("Kabi", 10));
-		Optional<Integer> val = employees.stream().map(e -> e.salary).reduce(Integer::sum);
-		System.out.println(val.get());
-
-	}
+  public static void main(String[] args) {
+    List<Employee> employees = Arrays.asList(new Employee("Ranjith", 40000), new Employee("Kabi", 30000));
+    Optional<Integer> totalSalary = employees.stream()
+        .map(e -> e.salary)
+        .reduce(Integer::sum);
+    System.out.println("totalSalary: " + totalSalary.get());
+  }
 }
 
 @Data
@@ -30,6 +29,6 @@ public class StreamsListReduce {
 @NoArgsConstructor
 @ToString
 class Employee {
-	String name;
-	Integer salary;
+  String name;
+  Integer salary;
 }
